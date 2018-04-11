@@ -563,7 +563,7 @@ We will use \(\zeta = x + iy\) to denote a point in \(\C_\infty\). From similar 
 \begin{proof}
   Easy once we write down the coordinates. Suppose \(P = (x, y, z)\). Then
   \begin{align*}
-    \pi(P) &= \frac{x + iy}{z} \\
+    \pi(P) &= \frac{x + iy}{1-z} \\
     \pi'(P) &= \frac{x + iy}{1 + z}
   \end{align*}
   and so
@@ -666,7 +666,7 @@ which is in fact surjective, so an isomrphism.
 \end{proof}
 
 \begin{remark}
-  THa mep
+  The map
   \[
     \SU(2)/\{\pm I\} \cong \SO(3)
   \]
@@ -1128,7 +1128,7 @@ and
 Define a projection from the upper sheet of the hyperboloid to the unit disc in the complex plane
 \begin{align*}
   \pi: S^+ \to D \subseteq \C \\
-  (x, y, z) &\mapsto \frac{x + iy}{1 + z} = y + iv
+  (x, y, z) &\mapsto \frac{x + iy}{1 + z} = u + iv
 \end{align*}
 
 Put \(r^2 = u^2 + v^2\) and by striaghforward calculation,
@@ -1282,12 +1282,12 @@ If \(\Gamma([a, b]) \subseteq U = \sigma(N)\) for some parameterisation \(\sigma
 Thus
 \begin{align*}
   \Gamma'(t) &= \dot \gamma_1(t) \sigma_u|_{\gamma(t)} + \dot \gamma_2(t) \sigma_v|_{\gamma(t)} \\
-  \norm{\gamma'(t)} &= \inner{\dot \gamma, \dot \gamma}^{1/2}_{\gamma(t)} = (E \dot \gamma_1^2 + 2F \dot \gamma_1 \dot \gamma_2 + G \dot \gamma_2^2)^{1/2}.
+  \norm{\Gamma'(t)} &= \inner{\dot \gamma, \dot \gamma}^{1/2}_{\gamma(t)} = (E \dot \gamma_1^2 + 2F \dot \gamma_1 \dot \gamma_2 + G \dot \gamma_2^2)^{1/2}.
 \end{align*}
 With these expressions, we can write
 \begin{align*}
-  \operatorname{length}(\gamma) &= \int_a^b (E \dot \gamma_1^2 + 2F \dot \gamma_1 \dot \gamma_2 + G \dot \gamma_2^2)^{1/2} dt \\
-  \operatorname{energy}(\gamma) &= \int_a^b (E \dot \gamma_1^2 + 2F \dot \gamma_1 \dot \gamma_2 + G \dot \gamma_2^2) dt
+  \operatorname{length}(\Gamma) &= \int_a^b (E \dot \gamma_1^2 + 2F \dot \gamma_1 \dot \gamma_2 + G \dot \gamma_2^2)^{1/2} dt \\
+  \operatorname{energy}(\Gamma) &= \int_a^b (E \dot \gamma_1^2 + 2F \dot \gamma_1 \dot \gamma_2 + G \dot \gamma_2^2) dt
 \end{align*}
 
 \begin{definition}[Area]\index{area}
@@ -1410,7 +1410,7 @@ This gives a necessary condition for geodesic and one naturally wonders if it is
 \begin{remark}
   Given that \(\begin{psmallmatrix} E & F \\ F & G \end{psmallmatrix}\) is invertible, the geodesic ODE's are equivalent to
   \[
-    (\ddot u, \ddot v) = F(v, u, \dot u, \dot v)
+    (\ddot u, \ddot v) = F(u, v, \dot u, \dot v)
   \]
   Following from standard theory of ODE's. For all \(P = (u_0, v_0) \in V\), for all \(\V a = (a_0, b_0) \in \R^2\), there exists a unique geodesic \(\gamma(t), |t| \varepsilon\) with \(\gamma(0) = P, \dot \gamma(0) = \V a\).
 \end{remark}
@@ -1427,7 +1427,7 @@ Recall that
   \Gamma(0) &= P \in S \\
   \dot \Gamma(0) &= \V a \in T_PX
 \end{align*}
-where \(\Gamma: [0, T] \to S, \gamma = \sigma \compose \Gamma\).
+where \(\Gamma: [0, T] \to S, \gamma = \sigma^{-1} \compose \Gamma\).
 \item If \(\Gamma(t)\) minimises the length between its end points and \(\norm{\dot \Gamma(t)}\) is constant, then \(\Gamma(t)\) is a geodesic. This is a sufficient but not necessary condition.
 \end{enumerate}
 
